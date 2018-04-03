@@ -5,8 +5,8 @@ import PostListing from '../components/Posts/PostListing'
 const IndexPage = ({data}) => (
   <div>
     <h2>Posts</h2>
-    {data.allMarkdownRemark.edges.map(({node}) => (
-      <PostListing post={node} key={node.id} />
+    {data.allMarkdownRemark.edges.map(({node}, i) => (
+      <PostListing post={node} key={node.frontmatter.title} />
     ))}
   </div>
 )
@@ -29,6 +29,9 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "MMMM DD YYYY")
+          }
+          fields {
+            slug
           }
     	  }
     	}

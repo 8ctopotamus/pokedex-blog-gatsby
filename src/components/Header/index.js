@@ -25,9 +25,7 @@ const HeaderContainer = styled.div`
   z-index: 2;
 `
 
-const Header = ({data}) => {
-  console.log(data)
-  return(
+const Header = ({data}) => (
   <HeaderWrapper>
     <HeaderContainer>
       <h1 style={{ margin: 0 }}>
@@ -67,6 +65,6 @@ const Header = ({data}) => {
       sizes={data.background.sizes}
     />
   </HeaderWrapper>
-)}
+)
 
 export default Header

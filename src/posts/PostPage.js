@@ -1,21 +1,31 @@
 import React, { Component } from 'react'
-const { data } = this. props
 
 export default class PostPage extends Component {
   render () {
+    const { data } = this.props
+    console.log(data)
     return (
       <div>
-        <h1>Post Page</h1>
-        {/* <p>{data.excerpt}</p> */}
+        <span>{data.markdownRemark.frontmatter.date}</span>
+        <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{
+          __html: data.markdownRemark.html
+        }}></div>
+
       </div>
     )
   }
 }
 
-// export const query = graphql`
-//   query BlogPostQuery($slug: String!) {
-//   	markdownRemark(fields: { slug: { eq: $slug } }) {
-//       excerpt
-//     }
-//   }
-// `
+export const query = graphql`
+  query BlogPostQuery($slug: String!) {
+  	markdownRemark(fields: { slug: { eq: $slug } }) {
+      excerpt
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD YYYY")
+      }
+    }
+  }
+`
