@@ -24,6 +24,26 @@ const HeaderContainer = styled.div`
   padding: 1.45rem 1.0875rem;
   position: relative;
   z-index: 2;
+  display: flex;
+  justify-content: space-between;
+`
+
+const MainNav = styled.nav`
+  ul {
+    list-style: none;
+    display: flex;
+    li {
+      margin-left: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      a {
+        color: white;
+        text-decoration: none;
+        &:hover {
+          border-bottom: 3px solid #0ba7fe;
+        }
+      }
+    }
+  }
 `
 
 export default class Header extends Component {
@@ -67,7 +87,7 @@ export default class Header extends Component {
                 <img src={Logo} alt="logo" />
               </Link>
             </h1>
-            <nav>
+            <MainNav>
               <ul>
                 <li>
                   <Link to="/">
@@ -80,7 +100,7 @@ export default class Header extends Component {
                   </Link>
                 </li>
               </ul>
-            </nav>
+            </MainNav>
           </HeaderContainer>
           <Img
             style={{
@@ -88,7 +108,8 @@ export default class Header extends Component {
               left: 0,
               top: 0,
               width: '100%',
-              height: '100%'
+              height: '100%',
+              // opacity: 0.3
             }}
             sizes={data.background.sizes}
           />
