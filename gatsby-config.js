@@ -3,6 +3,7 @@ module.exports = {
     title: 'Pokédex Blog',
     desc: "A new pokémon blog",
   },
+  pathPrefix: "/",
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
