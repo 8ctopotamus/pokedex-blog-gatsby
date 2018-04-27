@@ -1,5 +1,7 @@
 # A Gatsby Blog example
 
+## IMPORTANT: when updating source code you need to first `git pull origin master` to get the latest markdown files and updates from Netlify CMS
+
 ## gatsby-starter-default
 The default Gatsby starter
 
@@ -9,3 +11,4 @@ Install this starter (assuming Gatsby is installed) by running from your CLI:
 ```
 gatsby new gatsby-example-site
 ```
+
