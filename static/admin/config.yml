@@ -3,13 +3,14 @@ backend:
   repo: 8ctopotamus/pokedex-blog-gatsby
 
 media_folder: static/assets
+public_folder: /assets
 
 collections:
   - name: post
     label: Posts
     folder: src/posts
     create: true
-    fields: 
+    fields:
       - { name: title, label: Title }
       - { name: date, label: Create At, widget: date }
       - { name: body, label: Post, widget: markdown }
